@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Email Extractor",
+  "version": "1.0",
+  "description": "Extracts email addresses from web pages",
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Extract Emails"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["tabs", "activeTab", "storage"]
+}
